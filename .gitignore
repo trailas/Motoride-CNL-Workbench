@@ -1,0 +1,35 @@
+# Generated Lex and Yacc files
+lex.yy.c
+parser.tab.c
+parser.tab.h
+parser.output
+parser_check.c
+parser_check.h
+
+# Compiled binaries
+*.exe
+*.out
+*.o
+*.obj
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Node and editor files
+node_modules/
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+
+# Submission artifacts
+*.zip
+Documentatie_LFT.pdf
+
+# Accidental local copies
+web

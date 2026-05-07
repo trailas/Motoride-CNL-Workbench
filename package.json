@@ -1,0 +1,20 @@
+{
+  "name": "motoride-cnl-workbench",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multilingual Lex/Yacc controlled language translator for motorcycle route planning and hazard reporting.",
+  "scripts": {
+    "start": "node ui/server.js",
+    "check:js": "node --check ui/server.js && node --check ui/app.js && node --check ui/advisor.js"
+  },
+  "keywords": [
+    "lex",
+    "yacc",
+    "bison",
+    "flex",
+    "controlled-natural-language",
+    "motorcycle",
+    "dsl"
+  ],
+  "license": "MIT"
+}

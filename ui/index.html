@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MotoRide CNL Workbench</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Lex/Yacc project</p>
+            <h1>MotoRide CNL Workbench</h1>
+          </div>
+          <div class="status" id="status">Ready</div>
+        </header>
+
+        <div class="editor-grid">
+          <aside class="examples-panel">
+            <div class="panel-head">
+              <h2>Examples</h2>
+              <button class="ghost-button" id="reloadExamples" type="button">Reload</button>
+            </div>
+            <div class="examples-list" id="examplesList"></div>
+          </aside>
+
+          <section class="editor-panel">
+            <label for="inputText">Controlled command</label>
+            <div class="speech-toolbar" id="speechToolbar">
+              <div class="speech-select">
+                <label for="speechLanguage">Speech language</label>
+                <select id="speechLanguage">
+                  <option value="ro-RO">Romana</option>
+                  <option value="en-US">English</option>
+                  <option value="fr-FR">Francais</option>
+                  <option value="es-ES">Espanol</option>
+                  <option value="de-DE">Deutsch</option>
+                </select>
+              </div>
+              <button class="mic-button" id="micButton" type="button" title="Start speech recognition">
+                <span aria-hidden="true">Mic</span>
+              </button>
+              <button class="secondary-button" id="stopMicButton" type="button">Stop</button>
+              <label class="check-option">
+                <input id="autoPeriod" type="checkbox" checked />
+                <span>Auto period</span>
+              </label>
+            </div>
+            <div class="speech-preview" id="speechPreview">Microphone ready</div>
+            <textarea id="inputText" spellcheck="false"></textarea>
+            <div class="actions">
+              <button class="primary-button" id="parseButton" type="button">Parse command</button>
+              <button class="accent-button" id="advisorButton" type="button">Run AI advisor</button>
+              <button class="secondary-button" id="clearButton" type="button">Clear</button>
+            </div>
+          </section>
+        </div>
+
+        <section class="output-grid">
+          <article class="output-panel">
+            <div class="panel-head">
+              <h2>Parser output</h2>
+              <button class="ghost-button" id="copyOutput" type="button">Copy</button>
+            </div>
+            <pre id="stdout"></pre>
+          </article>
+
+          <article class="output-panel">
+            <div class="panel-head">
+              <h2>Diagnostics</h2>
+            </div>
+            <pre id="stderr"></pre>
+          </article>
+        </section>
+
+        <section class="advisor-panel">
+          <div class="panel-head">
+            <h2>AI Route Advisor</h2>
+            <span class="advisor-provider" id="advisorProvider">Not run yet</span>
+          </div>
+          <div class="advisor-content">
+            <div class="score-row">
+              <div class="score-card">
+                <span>Scenic score</span>
+                <strong id="scenicScore">-</strong>
+              </div>
+              <div class="score-card">
+                <span>Risk score</span>
+                <strong id="riskScore">-</strong>
+              </div>
+              <div class="score-card">
+                <span>Ride fit</span>
+                <strong id="rideFit">-</strong>
+              </div>
+            </div>
+            <p class="advisor-explanation" id="advisorExplanation">
+              Run the advisor after writing or dictating a valid command.
+            </p>
+            <div class="tag-list" id="advisorTags"></div>
+            <pre class="advisor-json" id="advisorJson"></pre>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
